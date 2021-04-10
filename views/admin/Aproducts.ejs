@@ -1,0 +1,69 @@
+<%- include('../includes/head.ejs') %>
+    <!-- <link rel="stylesheet" href="./product.css"> -->
+    <style>
+     .product-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+}
+
+.product-item {
+    margin-bottom: 70px;
+    width: 20rem;
+    max-width: 95%;
+}
+
+.product__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.product__price {
+    text-align: center;
+    color: #778d14;
+    margin-bottom: 0.5rem;
+}
+
+.product__description {
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (prods.length > 0) { %>
+            <div class="grid">
+                <% for (let product of prods) { %>
+                    <article class="card product-item" style="background-color:initial">
+                        <header class="card__header">
+                            <h1 class="product__title"><%= product.title %></h1>
+                            <p style="text-align: left;"><i class="fas fa-heart"></i>  <%=product.likes%></p>
+                        </header>
+                        <div class="card__image">
+                            <img src="<%= product.imageUrl %>" height="300" width="50"
+                                alt="<%= product.title %>">
+                        </div>
+                        <div class="card__content">
+                            <h2 class="product__price"><i class="fas fa-rupee-sign"></i><%= product.price %></h2>
+                            <p class="product__description"><%= product.description %></p>
+                        </div>
+                        <div class="card__actions">
+                                    <a href="/edit-product/<%= product._id%>" class="btn btn-secondary"> <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp Edit</a><br>
+                                    <form action="/delete-product" method="POST">
+                                    <input type="hidden"  value="<%= product._id%>"  name="productId">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> &nbsp Delete</button>
+                                    </form>
+
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No Productssssssss Found!</h1>
+        <% } %>
+    </main>
+<%- include('../includes/end.ejs') %>

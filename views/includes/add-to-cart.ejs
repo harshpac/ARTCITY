@@ -1,0 +1,5 @@
+<form action="/cart" method="post">
+    <button class="btn btn-light" type="submit"><i class="fas fa-cart-plus"></i> &nbsp Add to Cart</button>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="hidden" name="productId" value="<%= product._id %>">
+</form>
