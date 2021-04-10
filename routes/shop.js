@@ -21,6 +21,10 @@ router.post('/cart',isAuth, Controller.postCart);
 
 router.get('/trending', isAuth, Controller.getTrending);
 
+router.get('/author/:authorId',isAuth,Controller.getAuthor); //new line
+
+router.get('/check',isAuth,Controller.getCheck);
+
 router.post('/cart-delete-item',isAuth, Controller.postcartDeleteProduct);
 
 router.post('/create-order',isAuth, Controller.postOrder);

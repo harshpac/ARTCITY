@@ -31,10 +31,8 @@
 body {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  background: url("https://image.freepik.com/free-photo/3d-grunge-room-interior-with-spotlight-smoky-atmosphere-background_1048-11333.jpg");
+  background-color: black;
   overflow-x:hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 
@@ -44,8 +42,6 @@ body {
 } */
 
 
-
-
 /* navigation bar */
 .addbg{
 position: relative;
@@ -53,14 +49,6 @@ background-color: #262626;
 }
 .navbar {
     transition: all 0.4s;
-}
-
-.video{
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 
@@ -161,22 +149,25 @@ background-color: #262626;
   }
 
   #one {
-      width: 350px;
-      height: 350px;
+    width:350px;
+    height: 350px;
       margin:auto;
   }
-#one:hover{
-  width:400px;
-  height: 400px;
-}
+  #one:hover{
+    width:400px;
+    height: 400px;
+  }
+
   .container:hover .img-trending {
     opacity: 0.3;
+
 
   }
 
   .container:hover .img-trending-txt {
     color: white;
     opacity: 1;
+
   }
 
   .text {
@@ -185,7 +176,13 @@ background-color: #262626;
     font-size: 16px;
     padding: 16px 32px;
   }
-
+.video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 
 
   </style>
@@ -201,10 +198,12 @@ background-color: #262626;
 <body>
 
         <!-- Nav Bar -->
-
         <section>
-          <video class="video" src="http://phpcoder.tech/html-css/Smoke.mp4" autoplay muted loop></video>
 
+
+  <video  class="video" autoplay muted  loop>
+    <source src="http://phpcoder.tech/html-css/Smoke.mp4" type="video/mp4" />
+  </video>
          <nav  class="navbar navbar-expand-lg  py-3 addbg">
              <div class="container" style="width:100%;padding:0 1rem;"><a href="/" class="navbar-brand text-uppercase font-weight-bold"><b>Art City</b></a>
                  <button type="button"  data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
@@ -271,7 +270,7 @@ background-color: #262626;
              </div>
          </nav>
 
-    <section class="section-top">
+    <section class="section-top" style="padding-left:13%;padding-bottom:100px;">
 
 
 
@@ -290,16 +289,16 @@ background-color: #262626;
 
     <!-- Trending section -->
 
-
+<% if(prods.length>0) { %>
     <section class="section-trending">
         <div class ="row">
-        <div class="container">
-          <img class="img-trending" src="<%=prods[0].imageUrl%>" alt="" id="one">
-          <div class="col img-trending-txt">
+        <div class="container x">
+          <img class="img-trending normal" src="<%=prods[0].imageUrl%>" alt="" id="one">
+          <div class="col img-trending-txt" style="position:absolute">
             <h1 class="img-title"><%= prods[0].title%>
-              <a href="/products/<%= prods[0]._id %>"><i class="fas fa-external-link-alt"></i></a>
+              <a style="color:white" href="/products/<%= prods[0]._id %>"><i class="fas fa-external-link-alt"></i></a>
             </h1>
-            <h2 class="img-likes"> <%=prods[0].likes%> <i class="fas fa-heart"></i></h2>
+            <h2 class="img-likes" style="color:#ff8882"> <%=prods[0].likes%> <i class="fas fa-heart"></i></h2>
           </div>
         </div>
        </div>
@@ -307,40 +306,43 @@ background-color: #262626;
 
         <div class="row">
 
+<% if(prods.length>1) { %>
+          <div class="col-lg-5 container x">
 
-          <div class="col-lg-5 container">
-
-              <img class="img-trending" src="<%=prods[1].imageUrl%>" alt="" id="one">
-              <div class="col img-trending-txt">
+              <img class="img-trending normal" src="<%=prods[1].imageUrl%>" alt="" id="one">
+              <div class="col img-trending-txt" style="position:absolute">
                 <h1 class="img-title"><%=prods[1].title%>
-                  <a href="/products/<%= prods[1]._id %>"><i class="fas fa-external-link-alt"></i></a>
+                  <a style="color:white" href="/products/<%= prods[1]._id %>"><i class="fas fa-external-link-alt"></i></a>
                 </h1>
-                <h2 class="img-likes"><%=prods[1].likes%> <i class="fas fa-heart"></i></h2>
+                <h2 class="img-likes" style="color:#ff8882"><%=prods[1].likes%> <i class="fas fa-heart"></i></h2>
               </div>
 
           </div>
+          <% } %>
+<% if(prods.length>2) { %>
+          <div class="col-lg-5 container x">
 
-          <div class="col-lg-5 container">
-
-              <img class="img-trending"src="<%=prods[2].imageUrl%>" alt="" id="one">
-              <div class="col img-trending-txt">
+              <img class="img-trending normal"src="<%=prods[2].imageUrl%>" alt="" id="one">
+              <div class="col img-trending-txt" style="position:absolute">
                 <h1 class="img-title"><%=prods[2].title%>
                   <a href="/products/<%= prods[2]._id %>"><i class="fas fa-external-link-alt"></i></a>
                 </h1>
-                <h2 class="img-likes"><%=prods[2].likes%> <i class="fas fa-heart"></i></h2>
+                <h2 class="img-likes" style="color:#ff8882" ><%=prods[2].likes%> <i class="fas fa-heart"></i></h2>
               </div>
             </div>
-
-
-
-        </div>
-        </div>
+<% } %>
 
 
         </div>
+        </div>
+
+
+        </div>
+
       </section>
-    </section>
-
+      <% } %>
+</section>
   </body>
 
   </html>
+  <%- include('../includes/end.ejs') %>

@@ -11,9 +11,6 @@
     max-width: 95%;
     margin-bottom: 70px;
 }
-.bllur{
-    z-index: 100;
-}
 .product__title {
     font-size: 1.2rem;
     text-align: center;
@@ -26,6 +23,14 @@
 .product__description {
     text-align: center;
 }
+.card{
+  box-shadow: 10px 10px 5px #798777;
+      -moz-box-shadow: 10px 10px 5px #798777;
+      -webkit-box-shadow: 10px 10px 5px #798777;
+      -khtml-box-shadow: 10px 10px 5px #798777;
+
+
+}
     </style>
 </head>
 
@@ -36,10 +41,9 @@
 
 
             <% if (prods.length > 0) { %>
-                <div class="grid ignore-css">
+                <div class="grid" style="padding-left:3%;padding-right:2%">
                     <% for (let product of prods) { %>
-                      <div class="bllur">
-                        <article class="card product-item"style="background-color:initial">
+                        <article class="card   product-item"style="background-color:initial;margin-left:10px;border:3px solid #798777">
                             <header class="card__header">
                                 <h1 class="product__title" style="color:#cdc733;font-size:xx-large"><b><%= product.title %></b></h1>
 
@@ -50,7 +54,7 @@
                             </div>
                             <div class="card__content">
                                 <h2 class="product__price" style="color:#cdc733"><i class="fas fa-rupee-sign"></i><%= product.price %></h2>
-                      
+
                             </div>
                             <div class="card__actions" style="padding-bottom:6px">
                                         <a href="/products/<%= product._id %>" class="btn btn-light"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp Details</a>
@@ -63,7 +67,6 @@
                                 <input type="hidden" name="productId" value="<%= product._id %>">
                             </form>
                         </article>
-                    </div>
                     <% } %>
                 </div>
             <% } else { %>

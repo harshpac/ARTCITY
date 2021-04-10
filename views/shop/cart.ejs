@@ -49,8 +49,8 @@
                 </ul>
                 <hr>
                 <div class="centered" style="text-align:center">
-                    <form action="/create-order" method="POST">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <form action="/check" method="GET">
+            
                         <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp Order Now!</button>
                     </form>
                 </div>
@@ -59,4 +59,6 @@
                 <h1>No Products in Cart!</h1>
             <% } %>
         </main>
-        <%- include('../includes/end.ejs') %>
+        </body>
+        </html>
+        <%- include('../includes/footer.ejs') %>
