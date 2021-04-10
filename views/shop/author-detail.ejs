@@ -1,0 +1,68 @@
+<%- include('../includes/head.ejs') %>
+    <!-- <link rel="stylesheet" href="./product.css"> -->
+    <style>
+    .product-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+}
+.product-item {
+    width: 20rem;
+    max-width: 95%;
+    margin-bottom: 70px;
+}
+.product__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+.product__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+.product__description {
+    text-align: center;
+}
+.card{
+  box-shadow: 10px 10px 5px #798777;
+      -moz-box-shadow: 10px 10px 5px #798777;
+      -webkit-box-shadow: 10px 10px 5px #798777;
+      -khtml-box-shadow: 10px 10px 5px #798777;
+
+
+}
+    </style>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+
+
+            <% if (array.length > 0) { %>
+                <div class="grid" style="padding-left:3%;padding-right:2%">
+                    <% for (let product of array) { %>
+                        <article class="card   product-item"style="background-color:initial;margin-left:10px;border:3px solid #798777">
+                            <header class="card__header">
+                                <h1 class="product__title" style="color:#cdc733;font-size:xx-large"><b><%= product.title %></b></h1>
+
+                            </header>
+                            <div class="card__image">
+                                <img src="<%= product.imageUrl %>" height="300" width="50"
+                                    alt="<%= product.title %>">
+                            </div>
+
+                            <div class="card__actions" style="padding-bottom:6px">
+
+                                        <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                            </div>
+
+                        </article>
+                    <% } %>
+                </div>
+            <% } else { %>
+                <h1>No Productssssssss Found!</h1>
+            <% } %>
+    </main>
+<%- include('../includes/end.ejs') %>

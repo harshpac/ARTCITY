@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Checkout</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <main class="mt-5 pt-4">
+    <div class="container wow fadeIn">
+
+      <!-- Heading -->
+      <h2 class="my-5 h2 text-center">Checkout form</h2>
+      <form action="/create-order" method="POST" style="margin-bottom:10px;margin-top:10px;">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button class="btn btn-primary btn-md btn-block btn-success" type="submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp Continue to Check Out</button>
+      </form>
+      <!--Grid row-->
+      <div class="">
+
+        <!--Card-->
+        <div class="card">
+
+          <!--Card content-->
+          <form class="card-body">
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-6 mb-2">
+
+                <!--firstName-->
+                <div class="md-form ">
+                  <input type="text" id="firstName" class="form-control">
+                  <label for="firstName" class="">First name</label>
+                </div>
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6 mb-2">
+
+                <!--lastName-->
+                <div class="md-form">
+                  <input type="text" id="lastName" class="form-control">
+                  <label for="lastName" class="">Last name</label>
+                </div>
+
+              </div>
+              <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+
+            <!--email-->
+            <div class="md-form mb-5">
+              <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+            </div>
+
+            <!--address-->
+            <div class="md-form mb-5">
+              <input type="text" id="address" class="form-control" placeholder="1234 Main St">
+              <label for="address" class="">Address</label>
+            </div>
+
+            <!--address-2-->
+            <div class="md-form mb-5">
+              <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
+              <label for="address-2" class="">Address 2 (optional)</label>
+            </div>
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-lg-4 col-md-12 mb-4">
+
+                <label for="country">Country</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">Choose...</option>
+                  <option>India</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-4 col-md-6 mb-4">
+                <label for="state">State</label>
+                 <input type="text" id="state" class="form-control" placeholder="State">
+
+
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-4 col-md-6 mb-4">
+
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required>
+                <div class="invalid-feedback">
+                  Zip code required.
+                </div>
+
+              </div>
+              <!--Grid column-->
+              <hr class="mb-4">
+
+
+
+
+
+
+            </div>
+            <!--Grid row-->
+          </form>
+
+          <hr>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+
+          <!-- Cart -->
+
+
+
+        <!--Grid column-->
+
+
+
+      </div>
+  </main>
+
+
+</body>
+
+</html>

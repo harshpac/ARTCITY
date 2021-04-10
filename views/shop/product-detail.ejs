@@ -1,27 +1,146 @@
 <%- include('../includes/head.ejs') %>
+<script src="https://kit.fontawesome.com/48974176e8.js" crossorigin="anonymous"></script>
+
+
+<!-- Bootstrap Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 <style>
 .centered{
     align-text: center;
+
 }
+body {
+  font-family: 'open sans';
+  overflow-x: hidden;
+  color: white;
+}
+
+img{
+  width: 60%;
+  box-shadow: 10px 10px 5px #ccc;
+      -moz-box-shadow: 10px 10px 5px #ccc;
+      -webkit-box-shadow: 10px 10px 5px #ccc;
+      -khtml-box-shadow: 10px 10px 5px #ccc;
+}
+
+.preview {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  }
+@media screen and (max-width: 996px) {
+    .preview {
+      margin-bottom: 20px; }
+}
+
+.card {
+  margin-top: 50px;
+  background: #262626;
+  padding: 3em;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 997px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+}
+
+.product-price, {
+  padding: 5rem 0;
+}
+
+.product-description{
+  padding: 5rem 0 ;
+}
+
+.details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.back{
+  color: white;
+}
+
+.add-to-cart, .like {
+  background: #eeebdd;
+  padding: 1.2em 1.5em;
+  border: none;
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  color: #262626;
+  -webkit-transition: background .3s ease;
+          transition: background .3s ease; }
+  .add-to-cart:hover, .like:hover {
+    background: #f14668;
+    color: #fff;
+}
+.back:hover{
+  color:#f14668;
+}
+.hide{
+  display:none;
+}
+.artist:hover .hide{
+  display:block;
+}
+
+
 </style>
+
     </head>
 
     <body>
         <%- include('../includes/navigation.ejs') %>
-        <main class="centered">
-            <h1><%= product.title %></h1>
-            <hr>
-            <div>
-                <img src="<%= product.imageUrl %>" height="300" width="300"
-                alt="<%= product.title %>">
+
+          <main class="centered">
+          <div class="card" style="background-color:#282d32;margin:40px 20px;">
+            <div class="container-fluid">
+              <div class="wrapper row">
+                <div class="preview col-md-6">
+                  <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+
+                </div>
+                <div class="details-text col-md-6" style="color:white">
+                  <a class="back" href="/products"><i class="fas fa-long-arrow-alt-left fa-3x"></i></a>
+                  <h1 class="title"><strong><%= product.title %></strong></h1>
+                  <h3 class="product-description"><%= product.description %></h3>
+                  <h3 class="product-price"><strong>Price : </strong> <i class="fas fa-rupee-sign"></i><%= product.price %></h3>
+                  <div class="action">
+                    <form action="/cart" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="add-to-cart btn btn-default" type="submit"><i class="fas fa-cart-plus"></i>&nbsp Add to Cart</button>
+                    <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span> <%=product.likes%></button>
+                    <button class="artist add-to-cart btn btn-default" type="button"><a href="/author/<%=authorId %>" style="color:initial; "> <i class="fas fa-external-link-alt"></i>View Artist</button>
+                  
+                      <input type="hidden" name="productId" value="<%= product._id %>">
+                      </form>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h2><i class="fas fa-rupee-sign"></i><%= product.price %></h2>
-            <p style="text-align: left;"><i class="fas fa-heart"></i>  <%=product.likes%></p>
-            <p><%= product.description %></p>
-            <form action="/cart" method="post">
-                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-    <button class="btn btn-dark" type="submit"><i class="fas fa-cart-plus"></i>&nbsp Add to Cart</button>
-    <input type="hidden" name="productId" value="<%= product._id %>">
-</form>
-        </main>
-        <%- include('../includes/end.ejs') %>
+
+          </div>
+          </main>
+</<body>
+  <%- include('../includes/end.ejs') %>
