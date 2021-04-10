@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ArtCity</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/48974176e8.js" crossorigin="anonymous"></script>
+
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  <!-- Css stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+
+  <style>
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background: url("https://image.freepik.com/free-photo/3d-grunge-room-interior-with-spotlight-smoky-atmosphere-background_1048-11333.jpg");
+  overflow-x:hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Sections */
+/* .top-section{
+  background-image: ;
+} */
+
+
+
+
+/* navigation bar */
+.addbg{
+position: relative;
+background-color: #262626;
+}
+.navbar {
+    transition: all 0.4s;
+}
+
+.video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+.navbar .nav-link {
+    color: #fff;
+}
+.navbar .nav-link.act {
+    color: #cdc733;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #cc7351;
+    text-decoration: none;
+}
+
+
+.navbar .navbar-brand {
+    color: #cdc733;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+.navbar.active .navbar-brand {
+    color: #f39189;
+}
+
+
+.navbar.active .act{
+  color:#f39189;
+}
+
+/* containers */
+
+.container-fluid{
+  padding: 7% 15%;
+}
+
+/* Headings */
+
+.main-title{
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  color: white;
+  text-align: left;
+}
+
+
+/* images */
+
+
+  .container {
+    position: relative;
+    width: 30%;
+    color: white;
+    padding-bottom: 100px;
+  }
+
+  .img-trending {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    /* height: auto; */
+    transition: .5s ease;
+    backface-visibility: hidden;
+    margin-right: auto;
+  }
+
+  .img-trending-txt {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  #one {
+      width: 350px;
+      height: 350px;
+      margin:auto;
+  }
+#one:hover{
+  width:400px;
+  height: 400px;
+}
+  .container:hover .img-trending {
+    opacity: 0.3;
+
+  }
+
+  .container:hover .img-trending-txt {
+    color: white;
+    opacity: 1;
+  }
+
+  .text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+
+
+  </style>
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+        <!-- Nav Bar -->
+
+        <section>
+          <video class="video" src="http://phpcoder.tech/html-css/Smoke.mp4" autoplay muted loop></video>
+
+         <nav  class="navbar navbar-expand-lg  py-3 addbg">
+             <div class="container" style="width:100%;padding:0 1rem;"><a href="/" class="navbar-brand text-uppercase font-weight-bold"><b>Art City</b></a>
+                 <button type="button"  data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+
+                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                     <ul class="navbar-nav ml-auto">
+                         <li class="nav-item active"><a href="/" class="<%= path === '/' ? 'active' : '' %> nav-link text-uppercase font-weight-bold">    Home <span class="sr-only">(current)</span></a></li>
+                         <li class="nav-item"><a href="/products" class="<%= path === '/products' ? 'act' : '' %> nav-link text-uppercase font-weight-bold"> <i class="fas fa-search"></i>Explore</a></li>
+                         <% if(isAuthenticated) { %>
+                         <li class="nav-item">
+                             <a class="<%= path === '/cart' ? 'act' : '' %> nav-link text-uppercase font-weight-bold" href="/cart"><i class="fas fa-cart-plus"></i> Cart</a>
+                         </li>
+                         <li class="nav-item">
+                              <a  class="<%= path === '/orders' ? 'act' : '' %> nav-link text-uppercase font-weight-bold" href="/orders">Orders</a>
+                         </li>
+
+                         <li class="nav-item">
+                              <a class="<%= path === '/add-product' ? 'act' : '' %> nav-link text-uppercase font-weight-bold" href="/add-product"><i class="fas fa-plus"></i> Add Painting
+                              </a>
+                         </li>
+                         <li class="nav-item">
+                              <a class="<%= path === '/Aproducts' ? 'act' : '' %> nav-link text-uppercase font-weight-bold" href="/Aproducts">My Paintings
+                              </a>
+                         </li >
+                        <% } %>
+
+                          <% if (!isAuthenticated) { %>
+                             <li class="nav-item">
+                                  <a class="<%= path === '/login' ? 'act' : '' %> nav-link text-uppercase font-weight-bold" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp Login</a>
+                             </li>
+                             <li class="nav-item">
+                                  <a class="<%= path === '/signup' ? 'act' : '' %> nav-link text-uppercase font-weight-bold" href="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp Signup</a>
+                             </li>
+                          <% } else { %>
+                             <li class="nav-item">
+                                  <form action="/logout" method="post">
+                                      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                      <button class="btn btn-light"type="submit"> <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp Logout</button>
+                                  </form>
+                             </li>
+                          <% } %>
+
+                     </ul>
+        <script type="text/javascript">
+          $(function () {
+            $(window).on('scroll', function () {
+                if ( $(window).scrollTop() > 10 ) {
+                    $('.navbar').addClass('active');
+                      $('.navbar').removeClass('addbg');
+                      $('.navbar').addClass('fixed-top');
+
+
+                } else {
+                    $('.navbar').removeClass('active');
+                    $('.navbar').addClass('addbg');
+                    $('.navbar').removeClass('fixed-top');
+
+                }
+            });
+        });
+
+        </script>
+                 </div>
+             </div>
+         </nav>
+
+    <section class="section-top">
+
+
+
+
+      <!-- Title -->
+      <div class="container-fluid" style="padding-top:160px;margin-bottom:100px">
+        <div class="main-title col-lg-6">
+          <h1 class="big-heading">A one-stop shop to Create, Sell and Showcase your Artwork aiming to remove the barrier of the current pandemic.</h1>
+          <form action="/products">
+          <button type="submit" class="btn btn-lg btn-dark download-button"><i class="fas fa-paint-brush"></i> Explore</button>
+        </form>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Trending section -->
+
+
+    <section class="section-trending">
+        <div class ="row">
+        <div class="container">
+          <img class="img-trending" src="<%=prods[0].imageUrl%>" alt="" id="one">
+          <div class="col img-trending-txt">
+            <h1 class="img-title"><%= prods[0].title%>
+              <a href="/products/<%= prods[0]._id %>"><i class="fas fa-external-link-alt"></i></a>
+            </h1>
+            <h2 class="img-likes"> <%=prods[0].likes%> <i class="fas fa-heart"></i></h2>
+          </div>
+        </div>
+       </div>
+
+
+        <div class="row">
+
+
+          <div class="col-lg-5 container">
+
+              <img class="img-trending" src="<%=prods[1].imageUrl%>" alt="" id="one">
+              <div class="col img-trending-txt">
+                <h1 class="img-title"><%=prods[1].title%>
+                  <a href="/products/<%= prods[1]._id %>"><i class="fas fa-external-link-alt"></i></a>
+                </h1>
+                <h2 class="img-likes"><%=prods[1].likes%> <i class="fas fa-heart"></i></h2>
+              </div>
+
+          </div>
+
+          <div class="col-lg-5 container">
+
+              <img class="img-trending"src="<%=prods[2].imageUrl%>" alt="" id="one">
+              <div class="col img-trending-txt">
+                <h1 class="img-title"><%=prods[2].title%>
+                  <a href="/products/<%= prods[2]._id %>"><i class="fas fa-external-link-alt"></i></a>
+                </h1>
+                <h2 class="img-likes"><%=prods[2].likes%> <i class="fas fa-heart"></i></h2>
+              </div>
+            </div>
+
+
+
+        </div>
+        </div>
+
+
+        </div>
+      </section>
+    </section>
+
+  </body>
+
+  </html>

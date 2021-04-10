@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+<style>
+.centered{
+    align-text: center;
+}
+</style>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main class="centered">
+            <h1><%= product.title %></h1>
+            <hr>
+            <div>
+                <img src="<%= product.imageUrl %>" height="300" width="300"
+                alt="<%= product.title %>">
+            </div>
+            <h2><i class="fas fa-rupee-sign"></i><%= product.price %></h2>
+            <p style="text-align: left;"><i class="fas fa-heart"></i>  <%=product.likes%></p>
+            <p><%= product.description %></p>
+            <form action="/cart" method="post">
+                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button class="btn btn-dark" type="submit"><i class="fas fa-cart-plus"></i>&nbsp Add to Cart</button>
+    <input type="hidden" name="productId" value="<%= product._id %>">
+</form>
+        </main>
+        <%- include('../includes/end.ejs') %>
