@@ -29,7 +29,7 @@ const User= require('../models/user');
       });
       if(pds.length > 3)
       pds = pds.slice(0, 3);
-      console.log(pds);
+      //console.log(pds);
       res.render('shop/enter', {
         prods: pds,
         pageTitle: 'On Trend',
@@ -42,8 +42,8 @@ const User= require('../models/user');
 
  exports.getProduct = (req, res, next) => {
    const prodId = req.params.productId;
-   console.log(req.params);
-   console.log('e');
+   //console.log(req.params);
+   //console.log('e');
    Product.findById(prodId)
    .then(prodd => {
         User.findById(prodd.userId).then(user => {
@@ -65,9 +65,9 @@ const User= require('../models/user');
 };
 exports.getAuthor = (req,res,next) =>  {
  const authorId=req.params.authorId;
- console.log("hello");
+ //console.log("hello");
  User.findById(authorId).then(user =>{
-   console.log(user.createdPaintings);
+  // console.log(user.createdPaintings);
      res.render('shop/author-detail', {
        array: user.createdPaintings,
        pageTitle:"creator",
@@ -141,12 +141,12 @@ exports.getAuthor = (req,res,next) =>  {
       }).catch(err => console.log(err));
    })
    .catch(err => console.log(err));
-   console.log('liked');
+  // console.log('liked');
    return res.redirect('/products');
  }
 
  exports.getCart = (req,res,next) => {
-   console.log(req.session);
+   //console.log(req.session);
     req.user
     .populate('cart.items.productId')
     .execPopulate()
@@ -166,7 +166,7 @@ exports.getAuthor = (req,res,next) =>  {
 
  exports.postcartDeleteProduct = (req,res,next) => {
    const prodId = req.body.productId;
-   console.log(req.prodId);
+   //console.log(req.prodId);
    req.user
    .removeFromCart(prodId)
    .then(result => {
@@ -176,7 +176,7 @@ exports.getAuthor = (req,res,next) =>  {
  };
 
  exports.postOrder = (req, res, next) => {
-console.log(req.user);
+//console.log(req.user);
   req.user
     .populate('cart.items.productId')
     .execPopulate()
