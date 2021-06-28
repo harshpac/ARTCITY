@@ -24,4 +24,25 @@ Using this webApp, we can explore other's and sell our works.
 * Edit it's price and description according to the market trend.
 
 ### Here are some screenshots:
+#### Get top three trending paintings (based on likes)
+<img src="https://user-images.githubusercontent.com/65284517/123602394-51e87100-d816-11eb-9790-1a88d61f39b0.PNG" height=620px width = 820px/>
+
+#### SignUp
+<img src="https://user-images.githubusercontent.com/65284517/123602911-e9e65a80-d816-11eb-85ea-f99e4c53c269.PNG" height=620px width = 820px/>
+
+#### Login
+<img src="https://user-images.githubusercontent.com/65284517/123602998-04203880-d817-11eb-9f9a-f44251e7f4d8.PNG" height=620px width = 820px/>
+
+#### Check your cart
+<img src="https://user-images.githubusercontent.com/65284517/123603098-2619bb00-d817-11eb-86fe-f9608d8c6328.PNG" height=620px width = 820px/>
+
+#### Add Painting
+<img src="https://user-images.githubusercontent.com/65284517/123603108-2914ab80-d817-11eb-9e37-4d0f4b3e4304.PNG" height=620px width = 820px/>
+
+#### Get Details
+<img src="https://user-images.githubusercontent.com/65284517/123603123-2e71f600-d817-11eb-9534-ed82b78dfe5a.PNG" height=620px width = 820px/>
+
+#### Check artist's other ArtWorks
+<img src="https://user-images.githubusercontent.com/65284517/123603130-303bb980-d817-11eb-98db-ea97bbd83dbb.PNG" height=620px width = 820px/>
+
 
